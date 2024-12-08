@@ -13,7 +13,6 @@ Specify waveforms for transmitting binary data:
 
 s1(t): A rectangular waveform of amplitude +1 (representing bit 1).
 
-𝑠2(𝑡)
 
 s2(t): A rectangular waveform of amplitude −1 (representing bit 0).
 
@@ -34,7 +33,7 @@ For each SNR value:
 Convert SNR (in dB) to linear scale.
 
 Calculate the noise power using the formula:
-                                            𝑃 noise = 𝑃 signal / SNR (linear)
+                                                       𝑃 noise = 𝑃 signal / SNR (linear)
 
 Generate Gaussian noise and add it to the transmitted signal to simulate a noisy received signal (rx_sequence).
 6. Receiver Design
@@ -48,15 +47,19 @@ Correlator:
 Multiply the received signal with 
                                                           𝑠1(𝑡)−𝑠2(𝑡)
  and sum the result.
-Similarly, compare the output with zero to detect the bit.
+                                        Similarly, compare the output with zero to detect the bit.
 7. Calculate BER
-Compare the detected bits with the original transmitted bits.
-Count the number of errors and calculate the Bit Error Rate (BER).
+              Compare the detected bits with the original transmitted bits.
+              Count the number of errors and calculate the Bit Error Rate (BER).
+
+
 8. Repeat for All SNRs
-Store BER results for both receivers over all SNR values.
+          Store BER results for both receivers over all SNR values.
 9. Plot BER Curves
-Plot the BER against SNR for both receivers on a semi-logarithmic scale.
-The lower the BER, the better the performance.
+         Plot the BER against SNR for both receivers on a semi-logarithmic scale.
+          The lower the BER, the better the performance.
+
+
 
 Key Points
 Matched Filter:
@@ -72,6 +75,5 @@ Comparison:
 Both receivers should show similar BER performance.
 As SNR increases, BER approaches zero.
 Outputs
-BER vs. SNR Plot:
-
+BER vs. SNR Plot : 
 Shows the performance of Matched Filter and Correlator receivers across different SNRs.
